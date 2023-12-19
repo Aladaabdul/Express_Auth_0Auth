@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+</head>
+<body>
+    <% if (user) { %>
+        <p>
+            Welcome <%= user.nickname %>, You are logged in
+        </p>
+        <img src="<%= user.picture %>" alt="<%= user.username %>"/>
+
+        <br />
+        <form action="logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    <% } else { %>
+        <p>Please <a href="/login">Login</a>to view Book list</p>
+    <% } %>
+</body>
+</html>
